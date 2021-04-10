@@ -4,8 +4,7 @@
 namespace Matucana\RuGpt3Api;
 
 
-use Capsule\Factory\StreamFactory;
-use Psr\Http\Client\ClientExceptionInterface;
+use Laminas\Diactoros\StreamFactory;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -25,7 +24,7 @@ class Client
 
     public function __construct(ClientInterface $httpClient)
     {
-       $this->httpClient = $httpClient;
+        $this->httpClient = $httpClient;
         $this->request = (new Request())
             ->withMethod('POST')
             ->withAddedHeader('User-Agent', self::USER_AGENT)
@@ -43,10 +42,10 @@ class Client
 
     public function generateUrl(string $methodApi): string
     {
-        return self::BASE_URL.'/'.$methodApi;
+        return self::BASE_URL . '/' . $methodApi;
     }
 
-    public function sendRequest(RequestInterface $request):ResponseInterface
+    public function sendRequest(RequestInterface $request): ResponseInterface
     {
         return $this->httpClient->sendRequest($request);
     }
