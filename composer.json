@@ -1,7 +1,7 @@
 {
   "name": "matucana/ru-gpt3-api-client",
   "description": "API client ruGPT-3 (SberCloud)",
-  "type": "project",
+  "type": "library",
   "keywords": [
     "ruGPT-3", 
 	"GPT-3", 
